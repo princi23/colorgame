@@ -5,7 +5,6 @@ var squares = document.querySelectorAll(".square");
 var resetButton = document.querySelector("#reset");
 var easybtn=document.querySelector("#easybtn");
 var hardbtn=document.querySelector("#hardbtn");
-
 	//add click listeners to squares
 easybtn.addEventListener("click",function(){
 	easybtn.classList.add("selected");
@@ -40,11 +39,8 @@ hardbtn.addEventListener("click",function(){
 	for(var i = 0; i < squares.length ; i++ )
 {
 	//add initial colors to squares
-	var r=Math.floor(Math.random()*256);
-	var g=Math.floor(Math.random()*256);
-	var b=Math.floor(Math.random()*256);
-	console.log(r);
-	squares[i].style.background="rgb(r ,g ,b )";
+	
+	squares[i].style.background=colors[i];
 	squares[i].style.display="block";
 }
 
@@ -127,4 +123,12 @@ function generaterandomColors(num)
 }
 function randomcolor()
 {
-	}
+	
+	var r=Math.floor(Math.random()*256);
+	var g=Math.floor(Math.random()*256);
+	var b=Math.floor(Math.random()*256);
+	console.log(r);
+	console.log(g);
+	console.log(b);
+	 return 'rgb(' + r + ', ' + g + ', ' + b + ')';
+}
